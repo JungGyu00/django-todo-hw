@@ -8,6 +8,19 @@
 </head>
 
 <body>
+    {% if request.user.is_authenticated %}
+    <div>
+        {{ request.user }}님 반갑습니다 !
+        <a href="/user/sign-out/">
+            <button type="submit">로그아웃</button>
+        </a>
+    </div>
+    {% else %}
+    <div>
+        <a href="/user/sign-in/">로그인</a>
+        <a href="/user/sign-up/">회원가입</a>
+    </div>
+    {% endif %}
     <h1>Home</h1>
     <a href="/todo/create/">
         <button type="submit">새 글 작성하기</button>

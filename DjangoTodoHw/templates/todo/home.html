@@ -25,10 +25,15 @@
     <a href="/todo/create/">
         <button type="submit">새 글 작성하기</button>
     </a>
-    <ol>
+    <ul>
+        {% for i in todo_list %}
         <li>
+            <div>
+                {{ i.title }}
+            </div>
         </li>
-    </ol>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>

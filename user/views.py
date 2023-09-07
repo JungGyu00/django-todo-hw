@@ -1,12 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from user.models import User
-from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 
-@csrf_exempt
 def signup(request):
     if request.method == "POST":
         User.objects.create_user(
